@@ -9,16 +9,25 @@ int verificaUsuario(char *usuario , int pass)
 {
   FILE *arq;
   char buffer[MAX];
-  char *nome;
+  char *nome = NULL ;
   int senha;
   arq = fopen("controle.txt" , "r");
   fgets ( buffer , MAX , arq);
-  while (!feof)
+  printf("%s\n", buffer);
+  printf("%s  | %d\n", usuario, pass);
+  while (!feof(arq))
   {
-  nome = strtok(buffer,",");
-  senha = atoi(strtok(NULL,","));
-  if( nome == &usuario && senha == pass)
-  return 1;
+    nome = strtok(buffer, ",");
+    senha = atoi(strtok(NULL, ","));
+    printf("%s  | %d\n", nome, senha);
+    printf("%s  | %d\n", usuario, pass);
+    if( &nome == &usuario && senha == pass)
+    {
+      printf("entrei");
+      fclose(arq);
+      return 1;
+    }
+    fgets ( buffer , MAX , arq);
   }
   fclose(arq);
   return 0;

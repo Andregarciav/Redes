@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include "server.h"
 
+
 int main()
 {
   int aux;
@@ -20,5 +21,6 @@ int main()
 
 
   printf("%c %s %d %s %s\n", msg->tipo , msg->login , msg->senha , msg->arquivo , msg->conteudo);
+  free(msg);
   return 0;
 }
