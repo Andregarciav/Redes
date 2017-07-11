@@ -13,3 +13,21 @@ typedef struct newUser
   char arquivo[MAX];
   char conteudo[MAX];
 }novo;
+
+int verificaUsuario(char *usuario);
+
+int escreveUsuario(char *usuario, int pass);
+
+int verificaSenha(char *usuario, int pass);
+
+int verificaArquivo (char *usuario, char *file, char *conteudo);
+
+int escreveArquivo (char *usuario, char *file, char *conteudo);
+
+int abreAux(char *usuario, char *file , char * conteudo);
+
+int buscaArquivo( char *usuario, char *file , char *saida);
+
+int imprimeArquivo(char *usuario, char *saida);
+
+int main_in(char *buffer_in, char *buffer_out);
